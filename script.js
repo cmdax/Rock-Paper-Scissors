@@ -57,10 +57,10 @@ for (nbPartie = 0; nbPartie < 6; nbPartie++){
 
 //      ASK the player for a choice
     let playerChoice = getHumanChoice();
-    console.log(playerChoice);
+    console.log(`You have choosen: ${playerChoice}`);
 //      ASK the machine for a choice
     let machineChoice = getMachineChoice();
-    console.log(machineChoice); 
+    console.log(`You adversary has choosen: ${machineChoice}`); 
 
 //      COMPARE the result
     scoreBoolean = compareResults(machineChoice, playerChoice);
