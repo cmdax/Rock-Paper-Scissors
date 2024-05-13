@@ -52,9 +52,8 @@ function addScore(playerWin) {
     console.log(`Your adversary's score is: ${machineScore}\n `);
 }
 
-//  FOR 5 rounds play the game
-for (nbPartie = 0; nbPartie < 5; nbPartie++){
-
+function playRound() {
+    
 //      ASK the player for a choice
     let playerChoice = getHumanChoice();
     console.log(`You have choosen: ${playerChoice}`);
@@ -68,6 +67,14 @@ for (nbPartie = 0; nbPartie < 5; nbPartie++){
 //      INCREASE the score of the winner
     addScore(scoreBoolean);
 }
+function playGame(){
+    //  FOR 5 rounds play the game
+    for (nbPartie = 0; nbPartie < 5; nbPartie++){
+        playRound();
+    }
+}
+
+playGame();
 
 //  SAY it is over and show the score
 if (playerScore > machineScore){
