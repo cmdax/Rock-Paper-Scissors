@@ -1,3 +1,9 @@
+//  CREATE a value for the player score
+let playerScore = 0;
+
+//  CREATE a value for the machine score
+let machineScore = 0;
+
 function getHumanChoice(){
     return prompt('Choose between rock (r), paper (p) or scissors (s)').slice(0).toLowerCase();
 }
@@ -27,7 +33,10 @@ function compareResults(machineChoice, playerChoice) {
             playerWin = true;
         }
     }
-    console.log(`playerWin = ${playerWin}`);
+    return playerWin;
+}
+
+function addScore(playerWin) {
 
     if (playerWin) {
         playerScore++;
@@ -38,12 +47,10 @@ function compareResults(machineChoice, playerChoice) {
         machineScore++;
         console.log('You loose!');
     }
-}
-//  CREATE a value for the player score
-let playerScore;
 
-//  CREATE a value for the machine score
-let machineScore;
+    console.log(`Your score is: ${playerScore}`);
+    console.log(`Your adversary's score is: ${machineScore}`);
+}
 
 //  FOR 5 rounds play the game
 for (nbPartie = 0; nbPartie < 6; nbPartie++){
@@ -56,9 +63,12 @@ for (nbPartie = 0; nbPartie < 6; nbPartie++){
     console.log(machineChoice); 
 
 //      COMPARE the result
+    scoreBoolean = compareResults(machineChoice, playerChoice);
+
 //      INCREASE the score of the winner
-    compareResults(machineChoice, playerChoice);
+    addScore(scoreBoolean);
 }
+
 //  SAY it is over and show the score
 if (playerScore > machineScore){
     console.log('You win the match!');
