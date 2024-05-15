@@ -35,6 +35,7 @@ body {
     justify-content: center;
     align-items: center;
     flex: 1;
+    gap: 30px;
 }
 
 #play-button {
@@ -47,4 +48,17 @@ body {
 
     font-size: 50px;
     font-weight: 400;
+}
+
+.choice-button {
+    background-color: var(--orange);
+
+    border: var(--lightgrey) solid 2px;
+    border-radius: 50px;
+
+    padding: 30px 60px;
+
+    font-size: 35px;
+    font-weight: 400;
+    
 }
