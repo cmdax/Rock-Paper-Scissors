@@ -5,6 +5,7 @@ let playerScore = 0;
 let machineScore = 0;
 
 function getHumanChoice(){
+    // ADD three buttons
     return prompt('Choose between rock (r), paper (p) or scissors (s)').slice(0).toLowerCase();
 }
 
